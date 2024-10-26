@@ -1,3 +1,12 @@
+CREATE TABLE device (
+  mac_address VARCHAR(255) NOT NULL,
+   model VARCHAR(255) NOT NULL,
+   override_fragment VARCHAR(255),
+   username VARCHAR(255),
+   password VARCHAR(255),
+   CONSTRAINT pk_device PRIMARY KEY (mac_address)
+);
+
 INSERT INTO device (mac_address, model, username, password, override_fragment) VALUES ('aa-bb-cc-dd-ee-ff', 'DESK', 'john', 'doe', null);
 INSERT INTO device (mac_address, model, username, password, override_fragment) VALUES ('f1-e2-d3-c4-b5-a6', 'CONFERENCE', 'sofia', 'red', null);
 INSERT INTO device (mac_address, model, username, password, override_fragment) VALUES ('a1-b2-c3-d4-e5-f6', 'DESK', 'walter', 'white', STRINGDECODE('domain=sip.anotherdomain.com\nport=5161\ntimeout=10'));
